@@ -81,6 +81,8 @@ void filling_arr_first(int *arr, int size, int type){
 
 
 int main(){
+    int checker = 0;
+    do{
     int first_array_size;
     cout<<"Write first array size: ";
     cin>>first_array_size;
@@ -111,5 +113,13 @@ int main(){
 
     delete[] arr_first;
     delete[] arr_second;
+    cout<<"Write number not equal to 0, for repeat my program: ";
+    cin>>checker;
+    cout<<endl;
+    }while(checker > 0);
     return 0;
 }
+
+
+
+
