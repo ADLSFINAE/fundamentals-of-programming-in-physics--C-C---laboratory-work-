@@ -76,18 +76,23 @@ int main()
     cout<<endl;
     cin.clear();
     cin.sync();
-    if(type == 1)
-        func(Text);
 
-    else if(type == 2){
+    switch(type){
+
+    case 1:
+        func(Text);
+        break;
+
+    case 2:
         char something[1024];
         gets(something);
-        cout<<something<<endl;
         func(something);
-    }
+        break;
 
-    else
+    default:
         cout<<"Out of type range";
+
+    }
 
     return 0;
 }
