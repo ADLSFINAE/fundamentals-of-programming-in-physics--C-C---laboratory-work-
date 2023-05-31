@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+using namespace std;
+
+const double x = 0.25;
+void circle(double startX, int n){
+    for(int i = 0; i < n; i++){
+        double sup = ((i * 0.25) - 1);
+        double y = sqrt(1 - (sup * sup));
+        cout<<((x * i) + startX)<<" "<<y<<endl;
+    }
+}
+
+void line(double startX){
+    for(int i = 0; i < 9; i++){
+        cout<<((x * i) + startX)<<" "<<0<<endl;
+    }
+}
+
+int main() {
+    circle(0, 9);
+    cout<<endl<<endl;
+    circle(2, 9);
+    cout<<endl<<endl;
+    circle(4, 9);
+    cout<<endl<<endl;
+    line(6);
+    cout<<endl;
+    circle(8, 9);
+    cout<<endl<<endl;
+    circle(10, 9);
+    cout<<endl<<endl;
+    circle(12, 9);
+    cout<<endl<<endl;
+    line(14);
+    cout<<endl;
+    circle(16, 9);
+    cout<<endl;
+    circle(18, 5);
+}

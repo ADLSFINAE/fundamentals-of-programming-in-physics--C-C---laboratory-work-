@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int number, sum = 0;
+
+    printf("Write number with 3 symbols: ");
+    scanf("%d", &number);
+
+    while (number != 0) {
+        sum += number % 10;
+        number /= 10;
+    }
+
+    if (sum < 15) {
+        printf("Lower then 15\n");
+    } else {
+        printf("Bigger then or equal to 15\n");
+    }
+
+    return 0;
+}

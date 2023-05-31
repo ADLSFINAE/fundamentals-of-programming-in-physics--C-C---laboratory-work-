@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    int x = 1;
+    do{
+        int count, n;
+        double a, sum = 0;
+
+        printf("Write count: ");
+        scanf("%d", &count);
+
+        for (n = 1; n <= count; n++) {
+            a = pow(-1, n) * ((n + 1) / pow(2, n - 1));
+            printf("a%d = %f\n", n, a);
+            sum += a;
+        }
+
+        printf("Sum of first %d elements: %f\n", count, sum);
+        cout<<"Write 0 for quit: ";
+        cin>>x;
+        cout<<endl;
+    }while(x != 0);
+
+    return 0;
+}

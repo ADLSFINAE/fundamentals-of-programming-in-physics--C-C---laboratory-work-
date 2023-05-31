@@ -1,0 +1,61 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main() {
+    int x1, x2, k;
+    char ch;
+    do {
+        // Запрос на ввод значений x1, x2, k
+        cout << "Write x1, x2, k: ";
+        cin >> x1 >> x2 >> k;
+
+        // Вычисление размера массива
+        int n = (x2 - x1) / k + 1;
+
+        // Выделение динамической памяти
+        int* arr = new int[n];
+
+        // Заполнение массива
+        for (int i = 0; i < n; i++) {
+            arr[i] = x1 + i * k;
+        }
+
+        // Вывод исходного массива
+        cout << "Array is: ";
+        for (int i = 0; i < n; i++) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+
+        // Изменение массива
+        for (int i = 0; i < n; i++) {
+            if (arr[i] % 3 == 0) {
+                arr[i] /= 3;
+            }
+            if (arr[i] % 5 == 0) {
+                arr[i] /= 5;
+            }
+            if (arr[i] % 7 == 0) {
+                arr[i] /= 7;
+            }
+        }
+
+        // Вывод измененного массива
+        cout << "Updated array is: ";
+        for (int i = 0; i < n; i++) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+
+        // Освобождение памяти
+        delete[] arr;
+
+        // Запрос на повторение программы
+        cout << "press esc for quit: ";
+        ch = _getch();
+        cout << endl;
+    } while (ch != 27);
+    return 0;
+}

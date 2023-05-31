@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+#include <stdlib.h>
+using namespace std;
+//x -= y + z * 2
+//y = 3 * sqrt((sinx)) + 4 * cos x
+#include <stdio.h>
+
+int main() {
+    cout<<"Alexander Kozlov"<<endl;
+    cout<<"Group: RFZ - 4"<<endl;
+    cout<<"Laboratory work number:  9"<<endl;
+    cout<<"Number of variant: 4"<<endl;
+
+    double x, y, z;
+    printf("Write Numbers x, y, z: ");
+    scanf("%lf %lf %lf", &x, &y, &z);
+
+    // первое выражение
+    x -= y + z * 2;
+    printf("Equasion x -= y + z * 2, x is: %lf\n", x);
+
+    // второе выражение
+    printf("Write Numbers x, y, z: ");
+    scanf("%lf %lf %lf", &x, &y, &z);
+
+    y = 3 * sqrt((sin(x))) + 4 * cos(x);
+    printf("Equasion y = 3 * sqrt((sin x)) + 4 * cos x, y is: %lf\n", y);
+
+    return 0;
+}

@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstdlib>
+#include <cstdio>
+#include <ctime>
+using namespace std;
+
+int main(){
+    printf("Alexander Kozlov");
+    cout<<"Group: RFZ - 4"<<endl;
+    cout<<"Laboratory work number:  10"<<endl;
+    cout<<"Number of variant: 4"<<endl;
+    cout<<endl<<endl;
+    cout<<"Write number lower than 1 for quit: ";
+    int x;
+    cin>>x;
+    cout<<endl;
+    do{
+        int number;
+        cin>>number;
+        int sum = 0;
+        for(int i = 0; i <=9; i++){
+            int sup = number;
+            while(sup > 0){
+                if(sup % 10 == i){
+                    sum += i;
+                }
+                sup /= 10;
+            }
+        }
+
+        cout<<"Result is: "<< (sum/2)<<endl;
+
+    }while(x > 1);
+
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    double n, sum = 0, count = 0;
+    double average;
+
+    printf("Write number n: ");
+    scanf("%lf", &n);
+
+    // суммируем четные числа
+    for (int i = 0; i < n; i += 2) {
+        sum += i;
+        count++;
+    }
+
+    // вычисляем среднее значение
+    if (count > 0) {
+        average = (sum / count);
+        printf("Average lower then %lf: %.2lf\n", n, average);
+    } else {
+        printf("Nothing from %lf\n", n);
+    }
+
+    return 0;
+}
