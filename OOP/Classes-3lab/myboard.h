@@ -8,6 +8,7 @@
 #include <vector>
 #include <QGraphicsEllipseItem>
 #include <QGraphicsTextItem>
+#include <map>
 
 #include "vector.h"
 using namespace std;
@@ -28,9 +29,14 @@ private:
     std::vector<pair<QGraphicsEllipseItem*, QString>>DotsOnY;
     std::vector<pair<QGraphicsEllipseItem*, QString>>DotsOnZ;
 
-    Vector* genX{nullptr};
-    Vector* genY{nullptr};
-    Vector* genZ{nullptr};
+    QGraphicsLineItem* genX{nullptr};
+    QGraphicsLineItem* genY{nullptr};
+    QGraphicsLineItem* genZ{nullptr};
+
+    std::map<int, pair<int, int>> ConvertX;
+    std::map<int, pair<int, int>> ConvertY;
+    std::map<int, pair<int, int>> ConvertZ;
+
     std::vector<Vector*> vecArr;
 };
 
