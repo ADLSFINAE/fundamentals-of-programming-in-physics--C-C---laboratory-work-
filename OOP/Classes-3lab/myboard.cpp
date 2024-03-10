@@ -41,9 +41,9 @@ MyBoard::MyBoard(QGraphicsScene *scene, QGraphicsRectItem *parent)
     qDebug()<<ConvertX[100].first<<ConvertX[100].second;
     qDebug()<<ConvertY[200].first<<ConvertY[200].second;
     qDebug()<<ConvertZ[300].first<<ConvertZ[300].second;
-    Vector* vec = new Vector(ConvertX[100].first, ConvertX[100].second,
-            ConvertY[-200].first, ConvertY[-200].second,
-            ConvertZ[-300].first, ConvertZ[-300].second, this);
+    Vector* vec = new Vector(ConvertX[130].first, ConvertX[130].second,
+            ConvertY[-235].first, ConvertY[-235].second,
+            ConvertZ[8].first, ConvertZ[8].second, this);
 
     //QGraphicsLineItem* item = new QGraphicsLineItem(400, 400, 500, 200, this);
     QPen pen;
