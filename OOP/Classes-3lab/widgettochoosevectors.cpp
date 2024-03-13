@@ -8,6 +8,7 @@ WidgetToChooseVectors::WidgetToChooseVectors(vector<Vector*> vec)
     for(int i = 0; i < static_cast<int>(vec.size()); i++){
         QString str = QString::number(vec[i]->x1) + " " + QString::number(vec[i]->x1) + " " + QString::number(vec[i]->x1);
         MyButton* button = new MyButton(vec[i], str, 0, 50 * i, this);
+
         QObject::connect(button, SIGNAL(addToQue()), this, SLOT(realerNrealer()));
         buttons.push_back(button);
     }
@@ -34,11 +35,15 @@ void WidgetToChooseVectors::realerNrealer()
     else{
         for(auto& elem : buttons){
             elem->setStyleSheet("background-color: white");
+            elem->vec->wasChoosen = false;
         }
         que.second = que.first;
         que.first = some;
         que.second->setStyleSheet("background-color: blue");
         que.first->setStyleSheet("background-color: blue");
+        que.first->vec->wasChoosen = true;
+        qDebug()<<que.first->vec->x1<<que.first->vec->x2<<que.first->vec->x3;
+        que.first->vec->wasChoosen = true;
     }
 }
 

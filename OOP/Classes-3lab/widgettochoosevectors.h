@@ -6,6 +6,7 @@
 #include "qdebug.h"
 #include "vector.h"
 #include <queue>
+#include <QPen>
 using namespace std;
 
 struct MyButton : public QPushButton{
