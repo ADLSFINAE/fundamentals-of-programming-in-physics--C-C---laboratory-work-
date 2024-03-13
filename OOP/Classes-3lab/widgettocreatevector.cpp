@@ -89,7 +89,9 @@ WidgetToCreateVector::WidgetToCreateVector(QWidget *parent)
     buttonFor1Method->setFixedSize(120, 20);
     buttonFor1Method->move(0, 130);
 
+
     QObject::connect(buttonFor1Method, SIGNAL(clicked()), this, SLOT(close()));
+    QObject::connect(buttonFor1Method, SIGNAL(clicked()), this, SLOT(getInfo1()));
 
     buttonFor2Method = new QPushButton("2 METHOD", this);
     buttonFor2Method->setFixedSize(120, 20);
@@ -102,4 +104,9 @@ WidgetToCreateVector::WidgetToCreateVector(QWidget *parent)
     buttonFor3Method->move(240, 130);
 
     QObject::connect(buttonFor3Method, SIGNAL(clicked()), this, SLOT(close()));
+}
+#include <QDebug>
+void WidgetToCreateVector::getInfo1()
+{
+    emit sendInfo1(labelXend->text() + ";" + labelYend->text() + ";" + labelZend->text() + ";");
 }

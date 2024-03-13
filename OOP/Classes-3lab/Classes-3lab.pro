@@ -15,6 +15,7 @@ SOURCES += \
     myscene.cpp \
     myview.cpp \
     vector.cpp \
+    widgettochoosevectors.cpp \
     widgettocreatevector.cpp
 
 HEADERS += \
@@ -23,6 +24,7 @@ HEADERS += \
 	myscene.h \
 	myview.h \
 	vector.h \
+	widgettochoosevectors.h \
 	widgettocreatevector.h
 
 # Default rules for deployment.

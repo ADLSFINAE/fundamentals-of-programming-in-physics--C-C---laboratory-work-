@@ -19,9 +19,10 @@ class MyBoard : public QObject, public QGraphicsRectItem
 public:
     MyBoard(QGraphicsScene* scene, QGraphicsRectItem* parent = 0);
     void buildingDecartSystem();
-    void createNewVector(QString string);
     void dotsCreator(QString s, int i, int x, int y);
-
+    vector<int> stringParser(QString string);
+public slots:
+    void createNewVector(QString string);
 private:
     QGraphicsScene* scene{nullptr};
 

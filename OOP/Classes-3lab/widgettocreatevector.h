@@ -9,13 +9,10 @@ class WidgetToCreateVector : public QWidget
     Q_OBJECT
 public:
     WidgetToCreateVector(QWidget* parent = 0);
+
     QPushButton* buttonFor1Method;
     QPushButton* buttonFor2Method;
     QPushButton* buttonFor3Method;
-private:
-    QLineEdit* labelXstart{nullptr};
-    QLineEdit* labelYstart{nullptr};
-    QLineEdit* labelZstart{nullptr};
 
     QLineEdit* labelXend{nullptr};
     QLineEdit* labelYend{nullptr};
@@ -25,13 +22,16 @@ private:
 
     QLineEdit* stepK;
 
-    QString string1;
-    QString string2;
-    QString string3;
+private:
+    QLineEdit* labelXstart{nullptr};
+    QLineEdit* labelYstart{nullptr};
+    QLineEdit* labelZstart{nullptr};
 signals:
     void sendInfo1(QString str);
     void sendInfo2(QString str);
     void sendInfo3(QString str);
+public slots:
+    void getInfo1();
 };
 
 #endif // WIDGETTOCREATEVECTOR_H
