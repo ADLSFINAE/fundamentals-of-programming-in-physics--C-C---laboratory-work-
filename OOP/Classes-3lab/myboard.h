@@ -21,6 +21,8 @@ public:
     void buildingDecartSystem();
     void dotsCreator(QString s, int i, int x, int y);
     vector<int> stringParser(QString string);
+
+    std::vector<Vector*> vecArr;
 public slots:
     void createNewVector(QString string);
 private:
@@ -37,8 +39,6 @@ private:
     std::map<int, pair<int, int>> ConvertX;
     std::map<int, pair<int, int>> ConvertY;
     std::map<int, pair<int, int>> ConvertZ;
-
-    std::vector<Vector*> vecArr;
 };
 
 #endif // MYBOARD_H

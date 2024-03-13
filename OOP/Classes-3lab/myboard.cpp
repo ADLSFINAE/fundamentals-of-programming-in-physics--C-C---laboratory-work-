@@ -107,6 +107,7 @@ void MyBoard::createNewVector(QString string)
     Vector* vec = new Vector(ConvertX[v[0]].first, ConvertX[v[0]].second,
             ConvertY[v[1]].first, ConvertY[v[1]].second,
             ConvertZ[v[2]].first, ConvertZ[v[2]].second, this);
+    vecArr.push_back(vec);
 }
 
 void MyBoard::dotsCreator(QString s, int i, int x, int y)

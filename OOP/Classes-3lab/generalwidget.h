@@ -5,6 +5,7 @@
 #include "myview.h"
 #include "myscene.h"
 #include "widgettocreatevector.h"
+#include "widgettochoosevectors.h"
 
 class GeneralWidget : public QWidget
 {
@@ -17,9 +18,11 @@ public:
 private:
     QPushButton* createVector{nullptr};
     QPushButton* choseAndOperation{nullptr};
+    QPushButton* tableOfVectors{nullptr};
     QString string;
 public slots:
     void createWidget();
+    void createWidget3();
     void getString(QString string);
 };
 
