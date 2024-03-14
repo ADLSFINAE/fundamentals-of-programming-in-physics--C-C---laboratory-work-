@@ -14,6 +14,8 @@ GeneralWidget::GeneralWidget(QWidget *parent)
     choseAndOperation->setFixedSize(200, 50);
     choseAndOperation->move(800, 50);
 
+    QObject::connect(choseAndOperation, SIGNAL(clicked()), this, SLOT(createWidget2()));
+
     tableOfVectors = new QPushButton("Choose 2 vectors", this);
     tableOfVectors->setFixedSize(200, 50);
     tableOfVectors->move(800, 100);
@@ -30,12 +32,27 @@ void GeneralWidget::createWidget()
     wdgt->show();
 
     QObject::connect(wdgt, SIGNAL(sendInfo1(QString)), this->scene->board, SLOT(createNewVector(QString)));
-    //QObject::connect(wdgt->buttonFor1Method, SIGNAL(clicked()), this->scene->board, SLOT(slot()));
+    QObject::connect(wdgt, SIGNAL(sendInfo2(QString)), this->scene->board, SLOT(createNewVector(QString)));
+    QObject::connect(wdgt, SIGNAL(sendInfo3(QString)), this->scene->board, SLOT(createNewVector(QString)));
+}
+
+void GeneralWidget::createWidget2()
+{
+    WidgetToChooseOperations* wdgt = new WidgetToChooseOperations;
+
+    QObject::connect(wdgt->button1, SIGNAL(clicked()), this->scene->board, SLOT(vectorPlus()));
+    QObject::connect(wdgt->button2, SIGNAL(clicked()), this->scene->board, SLOT(vectorMinus()));
+    QObject::connect(wdgt->button3, SIGNAL(clicked()), this->scene->board, SLOT(vectorScal()));
+    QObject::connect(wdgt, SIGNAL(signalK(int)), this->scene->board, SLOT(vectorK(int)));
 }
 
 void GeneralWidget::createWidget3()
 {
+    for(auto& elem : this->scene->board->vecArr){
+        elem->wasChoosen = false;
+    }
     WidgetToChooseVectors* wdgt = new WidgetToChooseVectors(this->scene->board->vecArr);
+
 
 }
 

@@ -15,6 +15,7 @@ SOURCES += \
     myscene.cpp \
     myview.cpp \
     vector.cpp \
+    widgettochooseoperations.cpp \
     widgettochoosevectors.cpp \
     widgettocreatevector.cpp
 
@@ -24,6 +25,7 @@ HEADERS += \
 	myscene.h \
 	myview.h \
 	vector.h \
+	widgettochooseoperations.h \
 	widgettochoosevectors.h \
 	widgettocreatevector.h
 

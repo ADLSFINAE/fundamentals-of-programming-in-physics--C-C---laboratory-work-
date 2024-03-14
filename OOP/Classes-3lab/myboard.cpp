@@ -41,7 +41,6 @@ MyBoard::MyBoard(QGraphicsScene *scene, QGraphicsRectItem *parent)
     QPen pen;
     pen.setWidth(10);
     pen.setBrush(QBrush(Qt::red));
-
 }
 
 void MyBoard::buildingDecartSystem()
@@ -108,6 +107,61 @@ void MyBoard::createNewVector(QString string)
             ConvertY[v[1]].first, ConvertY[v[1]].second,
             ConvertZ[v[2]].first, ConvertZ[v[2]].second, this);
     vecArr.push_back(vec);
+
+}
+
+void MyBoard::vectorPlus()
+{
+
+    for(auto& elem : vecArr){
+        for(auto& elem1 : vecArr){
+            if(elem != elem1 && elem->wasChoosen && elem1->wasChoosen){
+                //auto line1 = new QGraphicsLineItem(elem->genX, elem->genY, elem->genX, elem1->genY + elem->genY - 400, this);
+                //auto line2 = new QGraphicsLineItem(elem->genX, elem1->genY + elem->genY - 400, elem1->genX, elem1->genY, this);
+                auto line3 = new QGraphicsLineItem(400, 400, elem->genX, elem1->genY + elem->genY - 400, this);
+                auto line4 = new QGraphicsLineItem(400, 400, elem1->genX, elem->genY + elem1->genY - 400, this);
+            }
+        }
+    }
+
+}
+
+void MyBoard::vectorMinus()
+{
+
+}
+
+void MyBoard::vectorScal()
+{
+
+}
+
+void MyBoard::vectorK(int k)
+{
+    if(k == 0){
+        for(auto& elem : vecArr){
+            if(elem->wasChoosen){
+                QPen pen;
+                pen.setWidth(10);
+                elem->jigolo->setLine(400, 400, elem->genX * k - (400 * (k - 1)), elem->genY * k - (400 * (k - 1)));
+                elem->genX = elem->genX * k - (400 * (k - 1));
+                elem->genY = elem->genY * k - (400 * (k - 1));
+                elem->setPen(pen);
+                elem->update(elem->boundingRect());
+            }
+        }
+    }
+    for(auto& elem : vecArr){
+        if(elem->wasChoosen){
+            QPen pen;
+            pen.setWidth(10);
+            elem->jigolo->setLine(400, 400, elem->genX * k - (400 * (k - 1)), elem->genY * k - (400 * (k - 1)));
+            elem->genX = elem->genX * k - (400 * (k - 1));
+            elem->genY = elem->genY * k - (400 * (k - 1));
+            elem->setPen(pen);
+            elem->update(elem->boundingRect());
+        }
+    }
 }
 
 void MyBoard::dotsCreator(QString s, int i, int x, int y)
@@ -144,3 +198,8 @@ vector<int> MyBoard::stringParser(QString string)
 
     return vec;
 }
+
+
+
+
+

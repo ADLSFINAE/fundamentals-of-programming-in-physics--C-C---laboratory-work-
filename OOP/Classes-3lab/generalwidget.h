@@ -5,6 +5,7 @@
 #include "myview.h"
 #include "myscene.h"
 #include "widgettocreatevector.h"
+#include "widgettochooseoperations.h"
 #include "widgettochoosevectors.h"
 
 class GeneralWidget : public QWidget
@@ -22,6 +23,7 @@ private:
     QString string;
 public slots:
     void createWidget();
+    void createWidget2();
     void createWidget3();
     void getString(QString string);
 };

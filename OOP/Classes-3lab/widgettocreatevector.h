@@ -32,6 +32,8 @@ signals:
     void sendInfo3(QString str);
 public slots:
     void getInfo1();
+    void getInfo2();
+    void getInfo3();
 };
 
 #endif // WIDGETTOCREATEVECTOR_H

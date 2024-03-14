@@ -25,14 +25,19 @@ public:
 public slots:
     void changeColor(){
         counter++;
-        this->setStyleSheet("background-color: blue;");
-        qDebug()<<this->styleSheet();
-        emit addToQue();
+        if(counter % 2 == 0){
+            this->setStyleSheet("background-color: white;");
+            qDebug()<<this->styleSheet();
+            emit addToQue();
+        }
+        else{
+            this->setStyleSheet("background-color: blue;");
+            qDebug()<<this->styleSheet();
+            emit addToQue();
+        }
     }
-
 signals:
     void addToQue();
-    void delFromQue();
 };
 
 class WidgetToChooseVectors : public QWidget
@@ -45,6 +50,9 @@ public:
     pair<MyButton*, MyButton*> que;
 public slots:
     void realerNrealer();
+    void checker(MyButton* btn);
+signals:
+    void changeSignal(MyButton* btn);
 };
 
 #endif // WIDGETTOCHOOSEVECTORS_H

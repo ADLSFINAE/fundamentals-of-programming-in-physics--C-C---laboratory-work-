@@ -21,10 +21,14 @@ public:
     void buildingDecartSystem();
     void dotsCreator(QString s, int i, int x, int y);
     vector<int> stringParser(QString string);
-
     std::vector<Vector*> vecArr;
 public slots:
     void createNewVector(QString string);
+
+    void vectorPlus();
+    void vectorMinus();
+    void vectorScal();
+    void vectorK(int k);
 private:
     QGraphicsScene* scene{nullptr};
 
@@ -40,5 +44,4 @@ private:
     std::map<int, pair<int, int>> ConvertY;
     std::map<int, pair<int, int>> ConvertZ;
 };
-
 #endif // MYBOARD_H
