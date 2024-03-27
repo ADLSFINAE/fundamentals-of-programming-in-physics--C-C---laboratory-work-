@@ -2,6 +2,7 @@ debug/generalwidget.o
 debug/main.o
 debug/myboard.o
 debug/myscene.o
+debug/myvectors.o
 debug/myview.o
 debug/vector.o
 debug/widgettochooseoperations.o
@@ -10,6 +11,7 @@ debug/widgettocreatevector.o
 debug/moc_generalwidget.o
 debug/moc_myboard.o
 debug/moc_myscene.o
+debug/moc_myvectors.o
 debug/moc_myview.o
 debug/moc_vector.o
 debug/moc_widgettochooseoperations.o

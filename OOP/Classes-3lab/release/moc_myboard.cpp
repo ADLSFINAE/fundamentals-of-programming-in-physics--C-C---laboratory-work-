@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../myboard.h"
+#include "../../4lab/myboard.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

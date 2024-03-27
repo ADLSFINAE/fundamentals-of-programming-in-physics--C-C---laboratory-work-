@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../widgettochooseoperations.h"
+#include "../../4lab/widgettochooseoperations.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
